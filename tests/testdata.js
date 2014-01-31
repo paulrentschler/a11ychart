@@ -1,8 +1,11 @@
 /**
- * Data used to test a11yChart
+ * a11yChart jQuery Plugin test data
  *
- * @author     Paul Rentschler <paul@rentschler.ws>
- * @since      31 January 2014
+ *
+ * Copyright 2014 Paul Rentschler
+ * Released under the MIT license
+ *
+ * Date: 2014-01-31
  */
 
 

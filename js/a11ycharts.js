@@ -1,8 +1,13 @@
 /**
+ * a11yChart jQuery Plugin
+ *
  * Builds accessible charts in the DOM based on JSON formatted data
  *
- * @author     Paul Rentschler <paul@rentschler.ws>
- * @since      31 January 2014
+ *
+ * Copyright 2014 Paul Rentschler
+ * Released under the MIT license
+ *
+ * Date: 2014-01-31
  */
 
 (function($) {
