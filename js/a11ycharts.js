@@ -18,17 +18,25 @@
             // express a single node as a jQuery object
             var $t = $(this);
 
+            function setupChart ()
+            {
+                var $chart = $t;
+                if (!($t.is("ul") || $t.is("ol"))) {
+                    var $chart = $("<ul />");
+                    $t.append($chart);
+                }
+                var typeClass = params.type;
+                if (params.type == "sparklines") {
+                    typeClass = "sparklist";
+                }
+                $chart.addClass("a11ychart").addClass(typeClass);
+                return $chart;
+            }
+
             switch (params.type)
             {
                 case "horizontal-bar":
-                    if ($t.is("ul")) {
-                        var $chart = $t;
-                    } else {
-                        var $chart = $("<ul></ul>");
-                        $t.append($chart);
-                    }
-
-                    $chart.addClass("a11ychart horizontal-bar");
+                    var $chart = setupChart();
                     var total = 0;
                     $.each(params.data, function(key, value) {
                         total += value;
@@ -51,14 +59,7 @@
                     break;
 
                 case "timeline":
-                    if ($t.is("ul")) {
-                        var $chart = $t;
-                    } else {
-                        var $chart = $("<ul></ul>");
-                        $t.append($chart);
-                    }
-
-                    $chart.addClass("a11ychart timeline");
+                    var $chart = setupChart();
                     var max = 0;
                     $.each(params.data, function(key, value) {
                         if (value > max) {
@@ -84,15 +85,7 @@
                     break;
 
                 case "sparklines":
-                    if ($t.is("ul")) {
-                        var $chart = $t;
-                    } else {
-                        var $chart = $("<ul></ul>");
-                        $t.append($chart);
-                    }
-
-                    $chart.addClass("a11ychart sparklist");
-
+                    var $chart = setupChart();
                     var max = 0;
                     $.each(params.data, function(key, values) {
                         $.each(values, function(index, value) {
