@@ -1,16 +1,14 @@
 # a11yCharts
 
-CSS styling and javascript code for creating accessible bar charts in HTML
-documents.
+CSS styling and a jQuery plugin for creating bar charts that are accessible
+to people with disablities.
 
-The javascript code provides functionality to build accessible bar charts in
-an HTML document by providing a JSON data structure.
+The jQuery plugin builds accessible bar charts from a JSON data structure.
 
 
 ## Requirements
 
-jQuery is required to use the included javascript code to generate the
-accessible charts from JSON data.
+jQuery is required to use generate the accessible charts from JSON data.
 
 Tested with jQuery 1.10.2 (should work with older versions)
 
