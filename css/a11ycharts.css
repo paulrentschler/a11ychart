@@ -4,3 +4,162 @@
  * @author     Paul Rentschler <paul@rentschler.ws>
  * @since      31 January 2014
  */
+
+
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * CONTENTS.............You're reading it!
+ * HORIZONTAL_BARS......Horizontal bar chart
+ * TIMELINE.............Timeline graph
+ * SPARKLIST............Miniature timeline graph
+ */
+
+
+
+/*------------------------------------*\
+    $HORIZONTAL_LIST
+\*------------------------------------*/
+
+/*ul*/.a11ychart.horizontal-bar {
+    float: left;
+    border-top: 1px solid #EEEEEE;
+    width: 15em;
+}
+
+/*ul*/.a11ychart.horizontal-bar li {
+    position: relative;
+    display: block;
+    border-bottom: 1px solid #EEEEEE;
+    _zoom: 1;
+}
+
+/*ul*/.a11ychart.horizontal-bar li a {
+    display: block;
+    padding: 0.4em 4.5em 0.4em 0.5em;
+    position: relative;
+    z-index: 2;
+}
+
+/*ul*/.a11ychart.horizontal-bar /*span*/.count {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0 0.3em;
+    text-align: right;
+    color: #999;
+    font-weight: bold;
+    font-size: 0.875em;
+    line-height: 2em;
+}
+
+/*ul*/.a11ychart.horizontal-bar /*span*/.ratio {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #B8E4F5;
+    text-indent: -9999px;
+    overflow: hidden;
+    line-height: 2em;
+}
+
+/*ul*/.a11ychart.horizontal-bar li:hover {
+    background: #EFEFEF;
+}
+
+
+
+
+/*------------------------------------*\
+    $TIMELINE
+\*------------------------------------*/
+
+/*ul*/.a11ychart.timeline {
+    font-size: 0.75em;
+    height: 10em;
+    width: 53em;
+}
+
+/*ul*/.a11ychart.timeline li {
+    position: relative;
+    float: left;
+    width: 1.5em;
+    margin: 0 0.1em;
+    height: 8em;
+}
+
+/*ul*/.a11ychart.timeline li a {
+    display: block;
+    height: 100%;
+}
+
+/*ul*/.a11ychart.timeline li /*span*/.label {
+    display: block;
+    position: absolute;
+    bottom: -2em;
+    left: 0;
+    background: #FFFFFF;
+    width: 100%;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+}
+
+/*ul*/.a11ychart.timeline li a /*span*/.count {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    background: #AAAAAA;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+/*ul*/.a11ychart.timeline li:hover {
+    background: #EFEFEF;
+}
+
+/*ul*/.a11ychart.timeline li a:hover .count {
+    background: #2D7BB2;
+}
+
+
+
+
+/*------------------------------------*\
+    $SPARKLINES
+\*------------------------------------*/
+
+/*span*/.sparkline {
+    float: left;
+    height: 1em;
+    margin: 0 0.5em;
+}
+/*span*/.sparkline /*span*/.index {
+    position: relative;
+    float: left;
+    width: 2px;
+    height: 100%;
+}
+/*span*/.sparkline /*span*/.index /*span*/.count {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #AAAAAA;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+/* SPARKLINE LISTS */
+/*ul*/.a11ychart.sparklist li {
+    padding: 0.4em 0;
+}
