@@ -50,11 +50,11 @@
                         var ratio = parseInt((value / total) * 100);
                         $chart.append(
                             $("<li></li>").append(
-                                $("<span />").addClass("label").text(key)
+                                $("<span />").addClass("a11ychart-label").text(key)
                             ).append(
-                                $("<span />").addClass("count").text(value)
+                                $("<span />").addClass("a11ychart-count").text(value)
                             ).append(
-                                $("<span />").addClass("ratio").css(
+                                $("<span />").addClass("a11ychart-ratio").css(
                                     "width",
                                     ratio + "%"
                                 ).text("(" + ratio + "%)")
@@ -78,13 +78,13 @@
                             + ": " + value;
                         $chart.append(
                             $("<li></li>").append(
-                                $("<span />").addClass("entry").attr(
+                                $("<span />").addClass("a11ychart-entry").attr(
                                     "title",
                                     title
                                 ).append(
-                                    $("<span />").addClass("label").text(label)
+                                    $("<span />").addClass("a11ychart-label").text(label)
                                 ).append(
-                                    $("<span />").addClass("count").css(
+                                    $("<span />").addClass("a11ychart-count").css(
                                         "height",
                                         ratio + "%"
                                     ).text("(" + value + ")")
@@ -115,8 +115,8 @@
                                 label = value + ")";
                             }
                             $sparkChart.append(
-                                $("<span />").addClass("index").append(
-                                    $("<span />").addClass("count").css(
+                                $("<span />").addClass("a11ychart-index").append(
+                                    $("<span />").addClass("a11ychart-count").css(
                                         "height",
                                         ratio + "%"
                                     ).text(label)
@@ -126,7 +126,7 @@
 
                         $chart.append(
                             $("<li></li>").append($sparkChart).append(
-                                $("<span />").addClass("label").text(key)
+                                $("<span />").addClass("a11ychart-label").text(key)
                             )
                         );
                     });

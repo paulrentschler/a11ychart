@@ -30,6 +30,8 @@
 
 /*ul*/.a11ychart {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -50,14 +52,14 @@
     _zoom: 1;
 }
 
-/*ul*/.a11ychart.horizontal-bar li /*span,a*/.label {
+/*ul*/.a11ychart.horizontal-bar li /*span,a*/.a11ychart-label {
     display: block;
     padding: 0.4em 4.5em 0.4em 0.5em;
     position: relative;
     z-index: 2;
 }
 
-/*ul*/.a11ychart.horizontal-bar /*span*/.count {
+/*ul*/.a11ychart.horizontal-bar /*span*/.a11ychart-count {
     display: block;
     position: absolute;
     top: 0;
@@ -70,7 +72,7 @@
     line-height: 2em;
 }
 
-/*ul*/.a11ychart.horizontal-bar /*span*/.ratio {
+/*ul*/.a11ychart.horizontal-bar /*span*/.a11ychart-ratio {
     display: block;
     position: absolute;
     top: 0;
@@ -107,12 +109,12 @@
     height: 8em;
 }
 
-/*ul*/.a11ychart.timeline li /*span,a*/.entry {
+/*ul*/.a11ychart.timeline li /*span,a*/.a11ychart-entry {
     display: block;
     height: 100%;
 }
 
-/*ul*/.a11ychart.timeline li /*span*/.label {
+/*ul*/.a11ychart.timeline li /*span*/.a11ychart-label {
     display: block;
     position: absolute;
     bottom: -2em;
@@ -124,7 +126,7 @@
     text-align: center;
 }
 
-/*ul*/.a11ychart.timeline li /*span,a*/.entry /*span*/.count {
+/*ul*/.a11ychart.timeline li /*span,a*/.a11ychart-entry /*span*/.a11ychart-count {
     display: block;
     position: absolute;
     bottom: 0;
@@ -140,7 +142,7 @@
     background: #EFEFEF;
 }
 
-/*ul*/.a11ychart.timeline li /*span,a*/.entry:hover .count {
+/*ul*/.a11ychart.timeline li /*span,a*/.a11ychart-entry:hover .a11ychart-count {
     background: #2D7BB2;
 }
 
@@ -156,13 +158,13 @@
     height: 1em;
     margin: 0 0.5em;
 }
-/*span*/.sparkline /*span*/.index {
+/*span*/.sparkline /*span*/.a11ychart-index {
     position: relative;
     float: left;
     width: 2px;
     height: 100%;
 }
-/*span*/.sparkline /*span*/.index /*span*/.count {
+/*span*/.sparkline /*span*/.a11ychart-index /*span*/.a11ychart-count {
     display: block;
     position: absolute;
     bottom: 0;
