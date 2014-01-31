@@ -27,7 +27,21 @@
     <script type="text/javascript" src="../js/a11ycharts.js"></script>
     <script type="text/javascript" src="./testdata.js"></script>
     <script type="text/javascript">
+      (function($) {
+        $(document).ready(function() {
+          // test the horizontal bar chart generation
+          $("#horizontal-bar-chart-test").a11yChart({
+            "type": "horizontal-bar",
+            "data": horizontalBarChartData
+          });
 
+          // test the timeline chart generation
+
+
+          // test the sparkline charts generation
+
+        });
+      })(jQuery);
     </script>
   </head>
   <body>
