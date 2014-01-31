@@ -11,10 +11,22 @@
 \*------------------------------------*/
 /**
  * CONTENTS.............You're reading it!
+ * GENERAL..............Styles for all charts
  * HORIZONTAL_BARS......Horizontal bar chart
  * TIMELINE.............Timeline graph
  * SPARKLIST............Miniature timeline graph
  */
+
+
+
+/*------------------------------------*\
+    $HORIZONTAL_LIST
+\*------------------------------------*/
+
+/*ul*/.a11ychart {
+    list-style-type: none;
+}
+
 
 
 
