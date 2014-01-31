@@ -51,6 +51,36 @@
                     break;
 
                 case "timeline":
+                    if ($t.is("ul")) {
+                        var $chart = $t;
+                    } else {
+                        var $chart = $("<ul></ul>");
+                        $t.append($chart);
+                    }
+
+                    $chart.addClass("a11ychart timeline");
+                    var max = 0;
+                    $.each(params.data, function(key, value) {
+                        if (value > max) {
+                            max = value;
+                        }
+                    });
+                    $.each(params.data, function(key, value) {
+                        var ratio = parseInt((value / max) * 100);
+                        var label = new Date(Date.parse(key)).getUTCDate();
+                        $chart.append(
+                            $("<li></li>").append(
+                                $("<span />").addClass("entry").append(
+                                    $("<span />").addClass("label").text(label)
+                                ).append(
+                                    $("<span />").addClass("count").css(
+                                        "height",
+                                        ratio + "%"
+                                    ).text("(" + value + ")")
+                                )
+                            )
+                        );
+                    });
                     break;
 
                 case "sparklines":

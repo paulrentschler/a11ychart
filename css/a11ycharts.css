@@ -102,7 +102,7 @@
     height: 8em;
 }
 
-/*ul*/.a11ychart.timeline li a {
+/*ul*/.a11ychart.timeline li /*span,a*/.entry {
     display: block;
     height: 100%;
 }
@@ -119,7 +119,7 @@
     text-align: center;
 }
 
-/*ul*/.a11ychart.timeline li a /*span*/.count {
+/*ul*/.a11ychart.timeline li /*span,a*/.entry /*span*/.count {
     display: block;
     position: absolute;
     bottom: 0;
@@ -135,7 +135,7 @@
     background: #EFEFEF;
 }
 
-/*ul*/.a11ychart.timeline li a:hover .count {
+/*ul*/.a11ychart.timeline li /*span,a*/.entry:hover .count {
     background: #2D7BB2;
 }
 
