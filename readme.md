@@ -17,7 +17,7 @@ Tested with jQuery 1.10.2 (should work with older versions)
 
 * Code repository: https://bitbucket.org/paulrentschler/a11ychart
 * Questions and comments: paul _ at _ rentschler _ dot _ ws
-* Report bugs:
+* Report bugs: https://bitbucket.org/paulrentschler/a11ychart/issues
 
 
 ## Credits
