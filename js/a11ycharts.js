@@ -69,9 +69,14 @@
                     $.each(params.data, function(key, value) {
                         var ratio = parseInt((value / max) * 100);
                         var label = new Date(Date.parse(key)).getUTCDate();
+                        var title = new Date(Date.parse(key)).toUTCString()
+                            + ": " + value;
                         $chart.append(
                             $("<li></li>").append(
-                                $("<span />").addClass("entry").append(
+                                $("<span />").addClass("entry").attr(
+                                    "title",
+                                    title
+                                ).append(
                                     $("<span />").addClass("label").text(label)
                                 ).append(
                                     $("<span />").addClass("count").css(
