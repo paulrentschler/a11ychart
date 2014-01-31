@@ -84,6 +84,49 @@
                     break;
 
                 case "sparklines":
+                    if ($t.is("ul")) {
+                        var $chart = $t;
+                    } else {
+                        var $chart = $("<ul></ul>");
+                        $t.append($chart);
+                    }
+
+                    $chart.addClass("a11ychart sparklist");
+
+                    var max = 0;
+                    $.each(params.data, function(key, values) {
+                        $.each(values, function(index, value) {
+                            if (value > max) {
+                                max = value;
+                            }
+                        });
+                    });
+
+                    $.each(params.data, function(key, values) {
+                        var $sparkChart = $("<span />").addClass("sparkline");
+                        $.each(values, function(index, value) {
+                            var ratio = parseInt((value / max) * 100);
+                            var label = value + ", ";
+                            if (index == 0) { label = "(" + value + ", "; }
+                            else if (index == values.length - 1) {
+                                label = value + ")";
+                            }
+                            $sparkChart.append(
+                                $("<span />").addClass("index").append(
+                                    $("<span />").addClass("count").css(
+                                        "height",
+                                        ratio + "%"
+                                    ).text(label)
+                                )
+                            );
+                        });
+
+                        $chart.append(
+                            $("<li></li>").append($sparkChart).append(
+                                $("<span />").addClass("label").text(key)
+                            )
+                        );
+                    });
                     break;
             }
         });
