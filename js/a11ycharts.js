@@ -15,9 +15,35 @@
         }, params);
 
         this.each(function() {
-            // code goes here to generate the charts
+            // express a single node as a jQuery object
+            var $t = $(this);
 
+            switch (params.type)
+            {
+                case "horizontal-bar":
+                    if ($t.is("ul")) {
+                        var $chart = $t;
+                    } else {
+                        var $chart = $("<ul></ul>");
+                        $t.append($chart);
+                    }
 
+                    $chart.addClass("a11ychart horizontal-bar");
+                    $.each(params.data, function(key, value) {
+                        $chart.append(
+                            $("<li></li>").text(key).append(
+                                $("<span></span>").addClass("count").text(value)
+                            )
+                        );
+                    });
+                    break;
+
+                case "timeline":
+                    break;
+
+                case "sparklines":
+                    break;
+            }
         });
 
         // allow jQuery chaining
