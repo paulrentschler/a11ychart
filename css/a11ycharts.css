@@ -35,9 +35,7 @@
 \*------------------------------------*/
 
 /*ul*/.a11ychart.horizontal-bar {
-    float: left;
     border-top: 1px solid #EEEEEE;
-    width: 15em;
 }
 
 /*ul*/.a11ychart.horizontal-bar li {
@@ -47,7 +45,7 @@
     _zoom: 1;
 }
 
-/*ul*/.a11ychart.horizontal-bar li a {
+/*ul*/.a11ychart.horizontal-bar li /*span,a*/.label {
     display: block;
     padding: 0.4em 4.5em 0.4em 0.5em;
     position: relative;

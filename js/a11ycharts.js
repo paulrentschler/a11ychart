@@ -29,10 +29,22 @@
                     }
 
                     $chart.addClass("a11ychart horizontal-bar");
+                    var total = 0;
                     $.each(params.data, function(key, value) {
+                        total += value;
+                    });
+                    $.each(params.data, function(key, value) {
+                        var ratio = parseInt((value / total) * 100);
                         $chart.append(
-                            $("<li></li>").text(key).append(
-                                $("<span></span>").addClass("count").text(value)
+                            $("<li></li>").append(
+                                $("<span />").addClass("label").text(key)
+                            ).append(
+                                $("<span />").addClass("count").text(value)
+                            ).append(
+                                $("<span />").addClass("ratio").css(
+                                    "width",
+                                    ratio + "%"
+                                ).text("(" + ratio + "%)")
                             )
                         );
                     });
