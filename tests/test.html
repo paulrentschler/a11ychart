@@ -21,38 +21,6 @@
         padding: 1em 2em;
       }
     </style>
-
-    <script type="text/javascript"
-            src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/a11ycharts.js"></script>
-    <script type="text/javascript" src="./testdata.js"></script>
-    <script type="text/javascript">
-      (function($) {
-        $(document).ready(function() {
-          // test the horizontal bar chart generation
-          $("#horizontal-bar-chart-test").a11yChart({
-            "type": "horizontal-bar",
-            "data": horizontalBarChartData
-          });
-
-          $("#horizontal-bar-chart-width-test").a11yChart({
-            "data": horizontalBarChartData
-          });
-
-          // test the timeline chart generation
-          $("#timeline-chart-test").a11yChart({
-            "type": "timeline",
-            "data": timelineChartData
-          });
-
-          // test the sparkline charts generation
-          $("#sparkline-charts-test").a11yChart({
-            "type": "sparklines",
-            "data": sparklineChartData
-          });
-        });
-      })(jQuery);
-    </script>
   </head>
   <body>
     <h1>a11yChart Tests</h1>
@@ -76,6 +44,19 @@
     </div>
 
     <div class="section">
+      <h2>Horizontal bar chart - individual ratings</h2>
+      <p>
+        This graph shows an individual's rating of each entry on a fixed
+        scale (in this case 0-5 where 5 is "really liked it").
+      </p>
+
+      <h3>Fruit rating</h3>
+
+      <div id="horizontal-bar-chart-rating-test" style="width: 17em;">
+      </div>
+    </div>
+
+    <div class="section">
       <h2>Timeline chart</h2>
 
       <h3>Fruits eaten over time</h3>
@@ -93,5 +74,43 @@
       <ul id="sparkline-charts-test">
       </ul>
     </div>
+
+
+    <script type="text/javascript"
+            src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/a11ycharts.js"></script>
+    <script type="text/javascript" src="./testdata.js"></script>
+    <script type="text/javascript">
+      (function($) {
+        $(document).ready(function() {
+          // test the horizontal bar chart generation
+          $("#horizontal-bar-chart-test").a11yChart({
+            "type": "horizontal-bar",
+            "data": horizontalBarChartData
+          });
+
+          $("#horizontal-bar-chart-width-test").a11yChart({
+            "data": horizontalBarChartData
+          });
+
+          $("#horizontal-bar-chart-rating-test").a11yChart({
+            "data": horizontalBarChartRatings,
+            "max": 5
+          });
+
+          // test the timeline chart generation
+          $("#timeline-chart-test").a11yChart({
+            "type": "timeline",
+            "data": timelineChartData
+          });
+
+          // test the sparkline charts generation
+          $("#sparkline-charts-test").a11yChart({
+            "type": "sparklines",
+            "data": sparklineChartData
+          });
+        });
+      })(jQuery);
+    </script>
   </body>
 </html>

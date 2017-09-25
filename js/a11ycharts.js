@@ -16,7 +16,9 @@
         // merge default and user parameters
         params = $.extend({
             type: "horizontal-bar",
-            data: {}
+            data: {},
+            max: 0,
+            ratio_adjustment: 0,
         }, params);
 
         this.each(function() {
@@ -41,23 +43,42 @@
             switch (params.type)
             {
                 case "horizontal-bar":
-                    var $chart = setupChart();
-                    var total = 0;
+                    var $chart = setupChart()
+                    var total = 0
+                    // ensures that no bar is ever displayed at 100% width
+                    var ratio_adjustment = 0
+                    if (params.max > 0) {
+                        total = params.max
+                        if (ratio_adjustment == 0) {
+                            ratio_adjustment = 10
+                            ratio_adjustment += (total.toString().length - 2) * 3
+                        }
+                    } else {
+                        $.each(params.data, function(key, value) {
+                            total += value
+                        })
+                    }
                     $.each(params.data, function(key, value) {
-                        total += value;
-                    });
-                    $.each(params.data, function(key, value) {
-                        var ratio = parseInt((value / total) * 100);
+                        if (total > 0) {
+                            var ratio = parseInt((value / total) * 100)
+                            ratio -= ratio_adjustment
+                        } else {
+                            var ratio = 0
+                        }
                         $chart.append(
                             $("<li></li>").append(
-                                $("<span />").addClass("a11ychart-label").text(key)
+                                $("<span />")
+                                    .addClass("a11ychart-label")
+                                    .text(key)
                             ).append(
-                                $("<span />").addClass("a11ychart-count").text(value)
+                                $("<span />")
+                                    .addClass("a11ychart-count")
+                                    .text(value)
                             ).append(
-                                $("<span />").addClass("a11ychart-ratio").css(
-                                    "width",
-                                    ratio + "%"
-                                ).text("(" + ratio + "%)")
+                                $("<span />")
+                                    .addClass("a11ychart-ratio")
+                                    .css("width", ratio + "%")
+                                    .text("(" + ratio + "%)")
                             )
                         );
                     });

@@ -70,6 +70,7 @@
     font-weight: bold;
     font-size: 0.875em;
     line-height: 2em;
+    z-index: 2;
 }
 
 /*ul*/.a11ychart.horizontal-bar /*span*/.a11ychart-ratio {

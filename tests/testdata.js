@@ -18,6 +18,15 @@ var horizontalBarChartData = {
 };
 
 
+// JSON data for testing the horizontal bar chart ratings
+var horizontalBarChartRatings = {
+    "Apples": 4,
+    "Bananas": 5,
+    "Cherries": 4,
+    "Dates": 1,
+}
+
+
 // JSON data for testing the timeline chart
 var timelineChartData = {
     "2007-12-01": 40,
